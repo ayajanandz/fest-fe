@@ -1,0 +1,23 @@
+/* .box{
+    height: 100vh;
+    background-color: red;
+    position: absolute;
+    top: 80px;
+    right: 0px;
+    bottom: 0px;
+    left:0px;
+} */
+/* .box img{
+    height: 20vh;
+    width: 50vw;
+    object-fit: contain;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    padding:1rem;
+    margin: 1rem;
+} */
+.box{
+     /* margin-top:15px; */
+    height: 100vh;
+    background-image: url(../../assets/diego-ph-5LOhydOtTKU-unsplash.jpg);
+}

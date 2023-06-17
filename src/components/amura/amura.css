@@ -1,0 +1,17 @@
+.bodypart{
+    /* display: flex; */
+    margin: auto;
+    text-align: center;
+    /* width: 100%; */
+}
+
+
+
+.box_container img{
+    margin: 0.25rem;
+    height: 85vh;
+    object-fit:cover;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    
+  }
