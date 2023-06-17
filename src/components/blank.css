@@ -1,0 +1,6 @@
+.qrbox{
+    display: flex;
+    position: absolute;
+    text-align: center;
+    margin: 2rem;
+}

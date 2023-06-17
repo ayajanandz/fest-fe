@@ -6,15 +6,16 @@ import Register from "./components/register/register";
 import Navbar from './components/navbar/navbar';
 import Amura from './components/amura/amura';
 import Admindashboard from './components/admin/admindashboard';
+import Blank from "./components/blank";
 import './App.css';
 import { Routes, Route } from "react-router-dom";
 
 
 const App = ()=>{
-    localStorage.setItem("UserName",false);
-    localStorage.setItem("login",false);
+    // localStorage.setItem("UserName",false);
+    // localStorage.setItem("login",false);
     // localStorage.setItem("Admin",false);
-    localStorage.setItem("Email", false);
+    // localStorage.setItem("Email", false);
 
     return(
         <>
@@ -26,6 +27,7 @@ const App = ()=>{
                 <Route path="/dashboard" element={<Dasboard />} />
                 <Route path="/amura" element={<Amura />} />
                 <Route path="/admindashboard" element={<Admindashboard />} />
+                <Route path="/blank" element={<Blank />}/>
             </Routes>
         </>
     )

@@ -21,6 +21,7 @@ const [data, setData]= useState();
 // }
 const handlechange =(e) =>{
     setData(e.target.value);
+    
 }
 
 const paymentDone = async() =>{
