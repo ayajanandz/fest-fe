@@ -14,7 +14,7 @@ const Dashboard = () => {
   let OTP = null;
   
   
-  const email = localStorage.getItem("Email");
+ 
   const adminPage = () => {
     navigate("/admindashboard");
   };
@@ -34,21 +34,7 @@ const Dashboard = () => {
     localStorage.setItem("Admin", "false");
   };
 
-  const displayOTP=async()=>{
-   let response = await axios.post("http://localhost:9000/otp",{email})
-   localStorage.setItem("OTP",response.data.body.OTPgenerated);
-       const propsToPass = {
-      OTP:response.data.body.OTPgenerated ,
-      name:localStorage.getItem("UserName"),
-    };
-
-    navigate('/blank', { state: propsToPass });
-  
-    // OTP = response.data.body.OTPgenerated;
-    
-    
-    // .then((res)=>alert('Your OTP is: ',res.data.body.OTPgenerated.toString()))
-  }
+ 
 
   if (localStorage.getItem("Admin") === "true") {
     return (
@@ -95,16 +81,9 @@ const Dashboard = () => {
             >
               Logout
             </Button>
-             
+           
             <Events />
-            <Button
-              variant="contained"
-              onClick={() => displayOTP()}
-              className="diffBtn"
-              size="large"
-            >
-              Show OTP
-            </Button>
+            
           </div>
         </div>
       </>

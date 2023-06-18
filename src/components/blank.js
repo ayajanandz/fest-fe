@@ -2,7 +2,7 @@ import React from 'react';
 import QRCode from 'react-qr-code';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Button from "@mui/material/Button";
-
+import './blank.css';
 
 const Blank =() => {
     const navigate = useNavigate();
@@ -27,11 +27,13 @@ const Blank =() => {
     // const { state } = location;
     // console.log(state.otp);
     return(
-        <><div className='qrbox'>
+        <>
+        <div className='qrbox'>
             <QRCode
             size={200}
             value={OTP}
             />
+            </div>
              <Button
               variant="contained"
               onClick={() => logoutFnc()}
@@ -40,7 +42,7 @@ const Blank =() => {
             >
               Logout
             </Button>
-            </div>
+            
         </>
     )
 }
