@@ -22,6 +22,7 @@ const Dashboard = () => {
   const setFalse = () => {
     localStorage.setItem("login", false);
     localStorage.setItem("Email", false);
+    localStorage.setItem("OTP","false");
 
     navigate("/login");
   };

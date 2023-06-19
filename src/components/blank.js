@@ -11,7 +11,7 @@ const Blank =() => {
     const setFalse = () => {
         localStorage.setItem("login", false);
         localStorage.setItem("Email", false);
-        localStorage.setItem("OTP",null)
+        localStorage.setItem("OTP","false");
     
         navigate("/login");
       };

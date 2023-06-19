@@ -13,7 +13,7 @@ const Amura = () => {
     const navigate = useNavigate();
     const email = localStorage.getItem("Email");
     const [status, setStatus] = useState();
-
+  //  const [otp, setOtp] = useState();
     // const checkStatus =async()=>{
     //   if(localStorage.getItem("OTP")!=="false" && localStorage.getItem("OTP")!=="undefined"){
     //     setStatus(true);
@@ -33,6 +33,7 @@ const Amura = () => {
       const setFalse = () => {
         localStorage.setItem("login", false);
         localStorage.setItem("Email", false);
+        localStorage.setItem("OTP","false");
         
         navigate("/login");
       };
@@ -55,10 +56,12 @@ const Amura = () => {
 
        useEffect(()=>{
         displayOTP();
+        // setOtp(localStorage.getItem("OTP"));
         //checkStatus();
        },[status])
 
        console.log("stats",status);
+      //  console.log("OTP:",otp);
 
    return(
     <>
@@ -93,6 +96,7 @@ const Amura = () => {
               Show OTP
             </Button>:<div className='lmao'><h2>Verification pending!</h2></div>
             }
+            
             </div>
         </div>
         </div>
