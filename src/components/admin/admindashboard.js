@@ -6,6 +6,7 @@ import "./admindashboard";
  import { AiOutlineCheckCircle } from 'react-icons/ai';
 import { AiFillCheckCircle } from 'react-icons/ai';
 import Newnavbar from "../newnavbar/newnavbar";
+import  Verification  from './admin_verification';
 
 const Admin = (props) => {
   const navigate = useNavigate();
@@ -112,16 +113,10 @@ const Admin = (props) => {
                   })
                   .map((payee) => {
                     return (
-                      <tr key={payee.Email}>
-                        <td>{payee.Name}</td>
-                        <td>{payee.Email}</td>
-                        <td>{payee.TransactionId}</td>
-                        <td>    {payee.Verified} <p>  </p>
-                        {status ? <AiOutlineCheckCircle key={payee.Email}onClick={()=>changestatus(payee.Email)}/>:<AiFillCheckCircle onClick={()=>changestatus(payee.Email)}/> }</td>
-                                {/* <td>{movie.Rating}</td> */}
-                      </tr>
+                      <Verification key={payee.Email} payee = {payee}/>
+                      
                     );
-                  })}
+                })}
               </tbody>
             </table>
             {/* </div> */}
