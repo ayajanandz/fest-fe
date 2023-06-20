@@ -1,0 +1,30 @@
+.landingpage{
+    background-color: black;
+    height: 25%;
+    position: absolute;
+    color:rgb(182, 241, 103);
+    display: inline-block;
+    padding:2rem;
+    border-radius: 3rem;
+    margin-left: 25%;
+    margin-top:10% ;
+    margin-right: 25%;
+    transform: scale(1.25);
+}
+
+.loginbtn{
+    position: relative;
+    text-align: center;
+    top:10%;
+}
+
+.content{
+    color: bisque;
+}
+
+.heading{
+    position: relative;
+    margin-top: 2%;
+    text-decoration: overline;
+    text-align: center;
+}

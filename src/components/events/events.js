@@ -7,25 +7,8 @@ import { useNavigation } from 'react-router-dom';
 
 
 const Events = ()=> {
-    const mail = localStorage.getItem("Email")
+    const email = localStorage.getItem("Email")
     const name = localStorage.getItem("UserName");
-    
- const Passes =async() => {
-    console.log(name,mail);
-    let obj = {
-        mail,
-        name
-    };
-     try{
-        let response = await axios.post("http://localhost:9000/amura", obj);
-        if(response.data.message){
-         alert('User already present in records');
-        }
-     }catch(err) {
-        console.log(err);
-     }
- }
-
     return(
         <>
         <div className='eventscard'>
@@ -39,10 +22,7 @@ const Events = ()=> {
             2 <br/>
           </h2>
           <img src={amura} alt='Club_Img' />
-          <div className='passbtn'>
-          <button onClick={() => Passes()}>Get Passes</button>
-          </div>
-          
+                   
         </div>
 
         </>

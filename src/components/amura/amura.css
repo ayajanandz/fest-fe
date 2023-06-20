@@ -15,3 +15,18 @@
     margin-bottom: 1rem;
     
   }
+  .otpbtn{
+    /* display: flex;
+    position: absolute;
+    justify-content: top;
+    align-items: start;
+    left: 74%; */
+
+    top:10rem;
+    right:5rem;
+    position: fixed;
+
+  }
+  .lmao h2 {
+    color: red;
+  }

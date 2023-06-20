@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Newnavbar from '../newnavbar/newnavbar';
 import Button from "@mui/material/Button";
+import axios from "axios";
 // import img0 from '../../assets/poster0.jpg';
 // import img1 from '../../assets/poster1.jpg';
 import './amura.css';
@@ -10,6 +11,19 @@ import { useNavigate } from 'react-router-dom';
 
 const Amura = () => {
     const navigate = useNavigate();
+    const email = localStorage.getItem("Email");
+    const [status, setStatus] = useState();
+  //  const [otp, setOtp] = useState();
+    // const checkStatus =async()=>{
+    //   if(localStorage.getItem("OTP")!=="false" && localStorage.getItem("OTP")!=="undefined"){
+    //     setStatus(true);
+        
+    //     // console.log("Status is: ",statusOtp);
+    //   }else {
+    //     setStatus(false);
+    //   }
+    //   console.log("Status is: ",status);
+    // }
 
     const logoutFnc = () => {
         resetUsername();
@@ -19,12 +33,36 @@ const Amura = () => {
       const setFalse = () => {
         localStorage.setItem("login", false);
         localStorage.setItem("Email", false);
+        localStorage.setItem("OTP","false");
         
         navigate("/login");
       };
     const resetUsername = () => {
         localStorage.setItem("UserName", false);
       };
+      const displayOTP=async()=>{
+        let response = await axios.post("http://localhost:9000/otp",{email})
+        localStorage.setItem("OTP",response.data.body.OTPgenerated);
+        if(localStorage.getItem("OTP")!=="false" && localStorage.getItem("OTP")!=="undefined"){
+          setStatus(true);
+          
+          // console.log("Status is: ",statusOtp);
+        }else {
+          setStatus(false);
+        }
+        console.log("Status is: ",status);
+        // navigate('/blank');
+       }
+
+       useEffect(()=>{
+        displayOTP();
+        // setOtp(localStorage.getItem("OTP"));
+        //checkStatus();
+       },[status])
+
+       console.log("stats",status);
+      //  console.log("OTP:",otp);
+
    return(
     <>
     <Newnavbar/>
@@ -48,6 +86,18 @@ const Amura = () => {
             >
               Logout
             </Button>
+            <div className='otpbtn'>
+            {status?<Button
+              variant="contained"
+              onClick={() => navigate('/blank')}
+              className="diffBtn"
+              size="large"
+            >
+              Show OTP
+            </Button>:<div className='lmao'><h2>Verification pending!</h2></div>
+            }
+            
+            </div>
         </div>
         </div>
     </>
