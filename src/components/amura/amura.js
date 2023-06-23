@@ -13,17 +13,7 @@ const Amura = () => {
     const navigate = useNavigate();
     const email = localStorage.getItem("Email");
     const [status, setStatus] = useState();
-  //  const [otp, setOtp] = useState();
-    // const checkStatus =async()=>{
-    //   if(localStorage.getItem("OTP")!=="false" && localStorage.getItem("OTP")!=="undefined"){
-    //     setStatus(true);
-        
-    //     // console.log("Status is: ",statusOtp);
-    //   }else {
-    //     setStatus(false);
-    //   }
-    //   console.log("Status is: ",status);
-    // }
+  
 
     const logoutFnc = () => {
         resetUsername();
@@ -46,22 +36,21 @@ const Amura = () => {
         if(localStorage.getItem("OTP")!=="false" && localStorage.getItem("OTP")!=="undefined"){
           setStatus(true);
           
-          // console.log("Status is: ",statusOtp);
+          
         }else {
           setStatus(false);
         }
         console.log("Status is: ",status);
-        // navigate('/blank');
+       
        }
 
        useEffect(()=>{
         displayOTP();
-        // setOtp(localStorage.getItem("OTP"));
-        //checkStatus();
+        
        },[status])
 
        console.log("stats",status);
-      //  console.log("OTP:",otp);
+     
 
    return(
     <>

@@ -15,10 +15,7 @@ import "./eventcards.css";
 const Eventcards = () => {
 
 const [data, setData]= useState();
-// const [amount, setAmount] = useState();
-// const handleamount =(e)=>{
-//     setAmount(e.target.value);
-// }
+
 const handlechange =(e) =>{
     setData(e.target.value);
     
@@ -34,8 +31,9 @@ const paymentDone = async() =>{
     };
    if(data) {
         let response = await axios.post("http://localhost:9000/amuraPayee", payee);
-        alert('Status Server: ',response.data.body);
-        console.log(response.data.body);
+        
+       
+        alert('Status Server: '+ response.data.body);
    }else{
     alert('input field empty');
    }
@@ -122,21 +120,7 @@ const paymentDone = async() =>{
               placeholder="Enter you Transaction Id.."
               
             />
-            {/* <TextField
-              id="outlined-basic"
-              label="Paid Amount"
-              variant="outlined"
-              value={amount}
-              onChange={handlechange}
-              sx={{
-                width: 300,
-                textAlign: 'center',
-                
-              }}
-              InputProps={{ sx: { height: 80 } }}
-              placeholder="Enter Amount paid.."
-              
-            /> */}
+            
           </Box>
           </div>
           <div className="submitbtn">

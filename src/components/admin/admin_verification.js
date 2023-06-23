@@ -5,7 +5,9 @@ import axios from 'axios';
 const Verification = (props) => {
     const payee = props.payee;
     const email = payee.Email;
-const [status, setStatus] = useState('false')
+    const isVerified = payee.Verified;
+const [status, setStatus] = useState('false');
+
 
     const verifyUser = async(email) => {
           console.log("clicked for the emailid:",email);
@@ -21,7 +23,7 @@ const [status, setStatus] = useState('false')
         <td>{payee.Name}</td>
         <td>{payee.Email}</td>
         <td>{payee.TransactionId}</td>
-        <td>{status?<Button
+        <td>{status && isVerified=="false"?<Button
               variant="contained"
               onClick={() => verifyUser(email)}
               className="diffBtn"
@@ -30,22 +32,15 @@ const [status, setStatus] = useState('false')
               Verify
             </Button>:<Button
               variant="contained"
-              //onClick={() => verifyUser(email)}
+              
+              
               className="diffBtn"
               size="large"
             >
               Verified
             </Button>
         }
-          {/* {payee.Verified} <p> </p>
-          {status ? (
-            <AiOutlineCheckCircle
-              key={payee.Email}
-              onClick={() => changestatus(payee.Email)}
-            />
-          ) : (
-            <AiFillCheckCircle onClick={() => changestatus(payee.Email)} />
-          )} */}
+          
         </td>
       </tr>
     </>

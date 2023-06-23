@@ -13,14 +13,14 @@ const Admin = (props) => {
   
  const [status, setStatus] =useState(true);
 
-  const changestatus = (email)=> {
-        console.log("clicked for the emailid:",email);
-        setStatus(!status);
-        axios
-          .post("http://localhost:9000/verified",{email})
-          .then((res)=>console.log(res))
-          .catch((err)=> console.log(err));
-  }
+  // const changestatus = (email)=> {
+  //       console.log("clicked for the emailid:",email);
+  //       setStatus(!status);
+  //       axios
+  //         .post("http://localhost:9000/verified",{email})
+  //         .then((res)=>console.log(res))
+  //         .catch((err)=> console.log(err));
+  // }
 //   useEffect(()=>{
 //     return<h1>Hello Clicked </h1>
 //   },[status]);
@@ -40,16 +40,18 @@ const Admin = (props) => {
         .get("http://localhost:9000/admin?category=amuraPayee")
         .then((res) => setData(res.data))
         .catch((err) => console.log(err));
-      console.log(data);
+       // console.log(data);
     } else {
       alert("Oops you are logged out!");
       navigate("/login");
     }
-
-    // console.log(data);
+    
+     //console.log(data);
   }, []);
 
-  // console.log(data);
+   console.log(data);
+   console.log("AYaj");
+
   const [searchTerm, setsearchTerm] = useState("");
 
   if (localStorage.getItem("Admin") === "true") {

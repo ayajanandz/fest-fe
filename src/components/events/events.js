@@ -1,8 +1,8 @@
 import React from 'react';
-import axios from 'axios';
+
 import './events.css';
 import amura from '../../assets/Amura.png'
-import { useNavigation } from 'react-router-dom';
+
 
 
 
